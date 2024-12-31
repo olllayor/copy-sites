@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Advanced Web Scraper",
+    "version": "2.0",
+    "description": "Extract and analyze HTML and CSS structure of web pages with an enhanced UI and UX.",
+    "permissions": ["activeTab", "scripting", "storage", "downloads"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "web_accessible_resources": [
+      {
+        "resources": ["styles/global.css"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  
