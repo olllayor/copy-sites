@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styles/global.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <h2>HTML/CSS Scraper</h2>
-  <button id="scrapeButton">Scrape Current Page</button>
-  <div id="loading" style="display: none;">Loading...</div>
-  <div>
-    <h3>HTML</h3>
-    <textarea id="htmlOutput" readonly></textarea>
-    <h3>CSS</h3>
-    <textarea id="cssOutput" readonly></textarea>
+<body class="bg-gray-50 text-gray-900 p-6 w-[400px]">
+  <div class="space-y-6">
+    <!-- Header -->
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-gray-800">HTML/CSS Scraper</h2>
+      <p class="text-sm text-gray-500 mt-1">Extract and analyze web content effortlessly.</p>
+    </div>
+
+    <!-- Scrape Button -->
+    <button id="scrapeButton" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg shadow-md transition duration-300">
+      Scrape Current Page
+    </button>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="hidden text-center text-gray-600">
+      <div class="inline-flex items-center">
+        <svg class="animate-spin h-5 w-5 mr-3 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- HTML Section -->
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold text-gray-700">HTML</h3>
+      <textarea id="htmlOutput" readonly class="w-full p-3 bg-white border border-gray-200 rounded-lg shadow-sm resize-none font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <button id="copyHtmlButton" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-md transition duration-300">
+        Copy HTML
+      </button>
+    </div>
+
+    <!-- CSS Section -->
+    <div class="space-y-2">
+      <h3 class="text-lg font-semibold text-gray-700">CSS</h3>
+      <textarea id="cssOutput" readonly class="w-full p-3 bg-white border border-gray-200 rounded-lg shadow-sm resize-none font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <button id="copyCssButton" class="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-md transition duration-300">
+        Copy CSS
+      </button>
+    </div>
+
+    <!-- Download Button -->
+    <button id="downloadButton" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg shadow-md transition duration-300">
+      Download Results
+    </button>
   </div>
-  <button id="downloadButton">Download Results</button>
   <script src="popup.js"></script>
 </body>
 </html>
